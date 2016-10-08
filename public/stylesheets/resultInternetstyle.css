@@ -1,0 +1,18 @@
+.result {
+	padding: 0 !important;
+}
+#wrapper>#head,
+#wrapper>#s_tab,
+.container_s>#content_right,
+.container_s>.head_nums_cont_outer
+.container_s>#rs,
+.container_s>#page,
+#wrapper_wrapper>#foot,
+.search_tool,
+#content_left>div:not(.c-container) {
+	display: none !important;
+}
+.internet_result {
+	padding-bottom: 50px;
+	min-height: 500px;
+}

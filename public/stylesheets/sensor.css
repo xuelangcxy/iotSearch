@@ -1,0 +1,79 @@
+body,
+html {
+    /* width: 500px;
+    height: 500px; */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: "微软雅黑";
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+}
+.header h2 {
+    line-height: 50px;
+    color: #eee;
+}
+
+#allmap {
+    width: 100%;
+    /* height: 500px; */
+    height: 100%;
+    transition: all .5s;
+}
+
+p {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.anchorBL {
+    display: none;
+}
+
+.container {
+    position: relative;
+    /* width: 80%;
+    margin: 0 auto; */
+    padding: 20px;
+}
+.col-md-6 {
+    width: 50%;
+    display: inline-block;
+}
+
+@media (max-width: 780px) {
+    .col-md-6 {
+        width: 100%;
+    }
+}
+
+.col-md-6.map {
+    position: absolute;
+    height: 100%;
+    margin-top: 35px;
+    max-width: 95%;
+}
+
+.sensor-detail table {
+    width: 100%;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.sensor-detail table tr {
+    height: 40px;
+}
+.sensor-detail h3 {
+    text-align: center;
+}

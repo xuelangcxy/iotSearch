@@ -1,0 +1,27 @@
+body {
+	overflow: auto;
+}
+#bg{
+	background: rgb(255,255,255);
+}
+
+.duoshuo {
+	background: #eee;
+	width: 80%;
+	margin: 0 auto;
+	overflow: auto;
+	padding: 30px;
+	position: relative;
+	top: 50px;
+}
+
+.footer h5,a{
+	text-align: center;
+	color: #000;
+}
+
+#footer{
+	position: relative;
+	top: 50px;
+	left: 0;
+}

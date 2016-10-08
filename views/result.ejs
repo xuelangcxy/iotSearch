@@ -1,0 +1,167 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/images/favicon.png">
+  <title><%= title %></title>
+  <link rel="stylesheet" type="text/css" href="/assets/font-awesome-4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/bootstrap.min.css">
+  <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+  <link rel='stylesheet' href='/stylesheets/common.css' />
+  <link rel='stylesheet' href='/stylesheets/resultstyle.css' />
+  <link rel='stylesheet' href='/stylesheets/temp_chart.css' />
+</head>
+<body>
+  <div id="header" class="">
+    <div id="header">
+      <div class="container">
+      <div class="header-brand hidden-xs">
+        <a href="/">ISWIT</a>
+      </div>
+      <div class="header-search">
+        <form id="form" accept-charset="uf-8" id="search" action="/search/query">
+          <div class="form-group select">
+            <select class="form-control select" name="type" value="wsn">
+              <option value="internet" <% if(type=='internet') { %>selected<% } %>>互联网</option>
+              <option value="social" <% if(type=='social') { %>selected<% } %>>社交网</option>
+              <option value="wsn" <% if(type=='wsn') { %>selected<% } %>>传感网</option>
+            </select>
+          </div>
+          <input type="text" id="bbssearch" name="key" maxlength="40" placeholder="请输入查询语句，如实验室&amp;温度" value="<%= query %>" required>  
+          <button type="submit" id="sub-button" class="search-button">搜 索</button>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+
+<!-- result -->
+<div class="result show" id="result">
+<div class="container">
+  <ul class="list-main col-sm-8 col-xs-12">
+    <li class="list box chartbox">
+      <% include temp_chart.ejs %>
+    </li>
+  <% if (bbsData) { %>
+  <li class="list box count">
+    <h4 class="left">搜索耗时: <% if (bbsData.cost) { %><%= bbsData.cost %><% } %>ms</h4>
+    <h4 class="right">总共检索<% if (bbsData.total) { %><%= bbsData.total %><% } %>条数据</h4>
+  </li>
+    <% for (var idx in bbsData.sendMessage) { %>
+    <li class="list box">
+      <div class="top row">
+        <span class="board text-left col-md-4 col-sm-6 col-xs-8">
+          来自:
+          <%= (bbsData.sendMessage)[idx].board %></span>
+        <span class="submitTime text-center col-md-4">
+          发表于:
+          <%= (bbsData.sendMessage)[idx].submitTime %></span>
+        <span class="author right text-right col-md-4 col-sm-6 col-xs-4">
+          <a href="http://m.byr.cn<%= (bbsData.sendMessage)[idx].authorQuery %>
+            " title="author" class="fa fa-user" target="_blank">
+            <%= (bbsData.sendMessage)[idx].author %></a>
+        </span>
+      </div>
+      <div class="article-title">
+        <a target="_blank" href="<%= (bbsData.sendMessage)[idx].url %>
+          " class="author">
+          <%= (bbsData.sendMessage)[idx].title %></a>
+      </div>
+      <div class="sp-content hide">
+        <%= (bbsData.sendMessage)[idx].rawContent.replace(/\/att\//g, 'http://m.byr.cn' + '/att/').replace(/\/img\/ubb\/em/g, 'http://m.byr.cn' + '/img/ubb/em') %></div>
+    </li>
+    <% } %>
+  <% } else { %>
+    <li class="list box warning">elasticsearch 服务器连接异常, 请检查连接后重试!</li>
+  <% } %>
+  </ul>
+
+  <div class="right list-append col-sm-4 col-xs-12">
+  <div class="sensor box">
+    <div class="gps">
+      根据GPS定位信息, 当前共有
+      <span class="gpsNum">
+        <a href="/gpsMap" title="gps" target="_blank">
+        <% if (gpsData) { %>
+          <%= gpsData %>
+          <% } %></a>
+      </span>
+      人
+    </div>
+    </div>
+  <!-- sensor -->
+
+  <% if (aqiData) { %>
+  <% for(var i in aqiData) { %>
+  <div class="airQuality box">
+    <h4>传感器<%= parseInt(i)+1 %>: </h4>
+    <a href="/sensors/query?id=<%= aqiData[i]._id %>" title="sensor" target="_blank"><%= aqiData[i]._id %></a>
+    <div class="aqi">
+      <p>空气质量指数: <a href="" title=""><%= aqiData[i].aqiJson.aqi %></a></p>
+      <p>空气质量等级: <a href="" title=""><%= aqiData[i].aqiJson.quality %></a></p>
+      <p>PM2.5: <a href="" title=""><%= aqiData[i].aqiJson.pm2_5 %></a></p>
+      <!-- <p>PM10: <a href="" title=""><%= aqiData[i].aqiJson.pm10 %></a></p>
+      <p>NO2: <a href="" title=""><%= aqiData[i].aqiJson.no2 %></a></p>
+      <p>SO2: <a href="" title=""><%= aqiData[i].aqiJson.so2 %></a></p>
+      <p>O3: <a href="" title=""><%= aqiData[i].aqiJson.o3 %></a></p>
+      <p>CO: <a href="" title=""><%= aqiData[i].aqiJson.co %></a></p>
+      <p>首要污染物: <a href="" title=""><%= aqiData[i].aqiJson.primary_pollutant %></a></p>
+      <p>监测时间: <a href="" title=""><%= aqiData[i].aqiJson.time_point %></a></p> -->
+      </div>
+      
+  </div>
+  <% } %>
+  <% } else { %>
+  <div class="airQuality box">
+  <h4>没有传感器查询信息</h4>
+  </div>
+  <% } %>
+  </div>
+  <!-- result -->
+
+  <div class="list-pagination" id="page">
+    <a href="?key=北邮&amp;p=0" jp-role="last" jp-data="上一页">上一页</a>
+    <a href="?key=北邮&amp;p=1" jp-role="page" jp-data="1" class="active">1</a>
+    <a href="?key=北邮&amp;p=2" jp-role="page" jp-data="2">2</a>
+    <a href="?key=北邮&amp;p=3" jp-role="page" jp-data="3">3</a>
+    <a href="?key=北邮&amp;p=4" jp-role="page" jp-data="4">4</a>
+    <a href="?key=北邮&amp;p=5" jp-role="page" jp-data="5">5</a>
+    <a href="?key=北邮&amp;p=6" jp-role="page" jp-data="6">6</a>
+    <a href="?key=北邮&amp;p=7" jp-role="page" jp-data="7">7</a>
+    <a href="?key=北邮&amp;p=8" jp-role="page" jp-data="8">8</a>
+    <a href="?key=北邮&amp;p=9" jp-role="page" jp-data="9">9</a>
+    <a href="?key=北邮&amp;p=2" jp-role="last" jp-data="下一页">下一页</a>
+  </div>
+
+  </div><!-- container -->
+
+</div>
+
+  <!-- <div class="btn-toolbar" role="toolbar" aria-label="...">
+    <div class="btn-group" role="group" aria-label="1">1</div>
+    <div class="btn-group" role="group" aria-label="2">2</div>
+    <div class="btn-group" role="group" aria-label="3">3</div>
+  </div> -->
+
+  <% include footer.ejs %>
+
+  <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top fa fa-hand-o-up" role="button" title="" data-toggle="tooltip" data-placement="left" data-original-title="Return to top" style="">
+    </a>
+
+<script type="text/javascript" src="/javascripts/jquery/jquery.js"></script>
+<!-- <script type="text/javascript" src="/javascripts/jquery/jquery.form.js"></script> -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/javascripts/result.js"></script>
+<!-- <script type="text/javascript" src="/assets/echarts/echarts.js"></script> -->
+<script type="text/javascript" src="/dist/echarts.js"></script>
+<script type="text/javascript" src="/javascripts/historyChart.js"></script>
+<script type="text/javascript" src="/javascripts/chart - 副本.js"></script>
+<!-- <script type="text/javascript" src="/javascripts/temp_chart.js"></script> -->
+<script type="text/javascript">
+  var bbsData = '<%= JSON.stringify(bbsData) %>';
+</script>
+</body>
+</html>

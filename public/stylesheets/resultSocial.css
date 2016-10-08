@@ -1,0 +1,84 @@
+.query, .wrapper, body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+.result {
+	padding: 0 !important;
+}
+.internet_result {
+	padding-bottom: 50px;
+	min-height: 500px;
+	overflow: hidden;
+}
+#bbssearch {
+	height: 34px;
+	position: relative;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	/* bottom: 1px; */
+}
+.search_footer.W_textb {
+	display: none !important;
+}
+
+.wrap>.header-box,
+.wrap>#pagebar_container,
+#s_bottom_form,
+#s_footer.cr,
+.wrap>#top_login_bar,
+.wx-rb.wx-rb3 .img-box2 {
+	display: none !important;
+}
+
+.wx-rb.wx-rb3{
+	width: 100%;
+	border: 1px solid #ddd;
+	padding: 16px;
+	margin: 4px 0;
+	list-style: none;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #eee;
+	display: inline-block;
+}
+#main.main {
+	max-width: 100%;
+    width: auto;
+}
+#wrapper.wrapper {
+    min-width: 320px;
+    width: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.wrap {
+	min-width: 320px !important;
+}
+@media (min-width: 768px) {
+    #wrapper.wrapper {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    #wrapper.wrapper {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    #wrapper.wrapper {
+        width: 1170px;
+    }
+}
+
+.wx-rb .txt-box h4 {
+	font-size: 1.2em !important;
+}
+.wx-rb3 .txt-box p {
+	font-size: 1em !important;
+}
+
+#footer-2 a:link,
+#footer-2 a:visited,
+#footer-2 a:hover,
+#footer-2 a:active {
+	text-decoration: none;
+}

@@ -1,0 +1,6 @@
+#provinceMap {
+    height: 550px;
+    max-width: 100%;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+}

@@ -1,0 +1,394 @@
+.side {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 319px;
+    height: 100%;
+    -webkit-transition: right .5s ease;
+    -moz-transition: right .5s ease;
+    -o-transition: right .5s ease;
+    transition: right .5s ease;
+    border-left: 1px solid #1A1A1A;
+}
+.side .side-toggle {
+    position: absolute;
+    top: 50%;
+    left: -16px;
+    display: block;
+    overflow: hidden;
+    width: 15px;
+    height: 70px;
+    margin-top: -35px;
+    cursor: pointer;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-color: #C54331;
+}
+.side .side-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 319px;
+    height: 100%;
+    opacity: .7;
+    background-color: #21262D;
+    -webkit-filter: Alpha(opacity=70);
+    filter: Alpha(opacity=70);
+}
+.side .side-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 319px;
+    height: 100%;
+}
+.filter {
+    font-size: 0;
+    height: 30px;
+    padding: 20px 18px 20px 17px;
+    _overflow: hidden;
+}
+.filter .search {
+    width: 93px;
+    margin-right: 5px;
+}
+.filter .combo-box {
+    float: left;
+}
+.combo-box {
+    font-size: 12px;
+    position: relative;
+    z-index: 9000;
+    height: 28px;
+    padding: 0;
+    border: 1px solid #1E242D;
+    background-color: #4B5159;
+}
+.combo-box .combo-box-trigger {
+    line-height: 28px;
+    display: block;
+    padding: 0 10px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    color: #CDD5DC;
+}
+.combo-box .combo-box-trigger .drop-icon {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    display: block;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #CDD5DC transparent transparent;
+    _border-color: #CDD5DC tomato tomato;
+    _filter: chroma(color=tomato);
+}
+.filter .search .combo-box-wrapper {
+    width: 416px;
+}
+.combo-box .combo-box-wrapper {
+    position: absolute;
+    z-index: 9001;
+    top: 28px;
+    right: -1px;
+    display: none;
+    width: 100%;
+    border: 1px solid #1E242D;
+    background-color: #4B5159;
+}
+.area-list {
+    line-height: 12px;
+    margin: 20px;
+}
+.area-list .area-group {
+    margin: 20px 0;
+}
+.area-list .area-group-name {
+    float: left;
+    color: #858A91;
+}
+.area-list .area-group-list {
+    padding-left: 36px;
+}
+.area-list .area-group-item {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #CDD5DC;
+}
+.filter .order {
+    width: 182px;
+}
+.filter .combo-box {
+    float: left;
+}
+.combo-box {
+    font-size: 12px;
+    position: relative;
+    z-index: 9000;
+    height: 28px;
+    padding: 0;
+    border: 1px solid #1E242D;
+    background-color: #4B5159;
+}
+.search-container {
+    position: relative;
+    z-index: 999;
+    margin: 0 0 18px;
+    padding-left: 17px;
+}
+.search-container .search-box {
+    position: relative;
+    width: 284px;
+    height: 35px;
+    margin-bottom: 10px;
+}
+.search-container .search-input {
+    font-size: 12px;
+    line-height: 33px;
+    display: block;
+    width: 237px;
+    height: 33px;
+    margin: 0;
+    padding: 0 35px 0 10px;
+    color: #4f5964;
+    border: 1px solid #393e45;
+    outline: 0;
+    background-repeat: no-repeat;
+    background-position: 260px 8px;
+    background-image: url(/static/trends_travel/ui/tour/decorator/query_2216843.png);
+    background-color: #2f3640;
+    -webkit-appearance: none;
+}
+.search-container .search-close {
+    background-position: -143px -743px;
+}
+.search-container .search-close {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    display: none;
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #9C9C9C;
+    background-color: transparent\9;
+    _background-image: url(/static/trends_travel/ui/tour/decorator/close_normal_8f5d35e.gif);
+    background-repeat: no-repeat;
+}
+.search-scroll {
+    position: absolute;
+    top: 35px;
+    width: 283px;
+    background-color: #4b5159;
+}
+.scroll-bar {
+    position: relative;
+    overflow: hidden;
+}
+.scroll-bar .scroll-bar-item {
+    position: relative;
+    top: 0;
+}
+
+.search-container .search-result {
+    overflow: hidden;
+    margin: 0;
+}
+
+.scroll-bar .scroll-bar-rail {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    overflow: visible;
+    width: 7px;
+    cursor: pointer;
+}
+.search-scroll .scroll-bar-line {
+    background-color: #666D77;
+}
+.scroll-bar .scroll-bar-line {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    left: 3px;
+    width: 1px;
+    height: 100%;
+    cursor: pointer;
+    background-color: #323F47;
+}
+.search-scroll .scroll-bar-grab {
+    background-color: #808791;
+}
+.scroll-bar .scroll-bar-grab {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+    background-color: #445058;
+}
+
+.list-scroll {
+    margin: 7px 0;
+}
+
+.scroll {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.scroll-bar .scroll-bar-item {
+    position: relative;
+    top: 0;
+}
+
+.list {
+    font-size: 14px;
+    line-height: 44px;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.list li {
+    margin: 0 30px 0 0;
+    padding: 0 10px 0 20px;
+    cursor: pointer;
+}
+.list li a {
+    display: block;
+    margin-right: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #A2AAB0;
+    border-bottom: 1px dashed #323F47;
+}
+.list li .scenic {
+    display: inline-block;
+    overflow: hidden;
+    width: 6em;
+    margin-right: 5px;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    color: #A2AAB0;
+}
+.list li span {
+    cursor: pointer;
+}
+.list li .heat-4 {
+    background-position: -38px -201px;
+}
+.list li .heat-4 {
+    _background: url(/static/trends_travel/ui/tour/decorator/heat-4-h_c31b0a6.gif) no-repeat 0 0;
+    background-repeat: no-repeat;
+}
+.list li .scenic-heat {
+    display: inline-block;
+    overflow: hidden;
+    width: 164px;
+    height: 11px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.list li .heat-3 {
+    background-position: -67px -170px;
+}
+.list li .heat-3 {
+    _background: url(/static/trends_travel/ui/tour/decorator/heat-3-h_f23aae9.gif) no-repeat 0 0;
+    background-repeat: no-repeat;
+}
+.list li .heat-2 {
+    background-position: -95px -139px;
+}
+.list li .heat-2 {
+    _background: url(/static/trends_travel/ui/tour/decorator/heat-2-h_b69f7a0.gif) no-repeat 0 0;
+    background-repeat: no-repeat;
+}
+.list-scroll .scroll-bar-rail {
+    right: 21px;
+}
+.scroll-bar .scroll-bar-rail {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    overflow: visible;
+    width: 7px;
+    cursor: pointer;
+}
+
+.scroll-bar .scroll-bar-line {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    left: 3px;
+    width: 1px;
+    height: 100%;
+    cursor: pointer;
+    background-color: #323F47;
+}
+.scroll-bar .scroll-bar-grab {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+    background-color: #445058;
+}
+.bdshare-button-style0-32 {
+    zoom: 1;
+}
+.bdsharebuttonbox {
+    float: right;
+    overflow: hidden;
+    height: 44px;
+    margin-right: 15px;
+}
+
+.bdsharebuttonbox .label {
+    line-height: 40px;
+    float: left;
+    height: 40px;
+    color: #A2AAB0;
+    background-repeat: no-repeat;
+}
+.side .bdsharebuttonbox .baidu {
+    background-position: -134px -407px;
+}
+.side .bdsharebuttonbox .baidu {
+    _background: url(/static/trends_travel/ui/tour/decorator/i-baidu_c73a1fa.gif) no-repeat 0 0;
+    background-repeat: no-repeat;
+}
+.side .bdsharebuttonbox a {
+    margin-right: 0;
+}
+.bdshare-button-style0-32 a {
+    float: left;
+    width: 32px;
+    line-height: 32px;
+    height: 32px;
+    background-image: url(../img/share/icons_0_32.png?v=7f3ed0f4.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin: 6px 6px 6px 0;
+    text-indent: -100em;
+    overflow: hidden;
+    color: #3a8ceb;
+}

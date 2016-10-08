@@ -1,0 +1,121 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/images/favicon.png">
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/bootstrap.min.css">
+   
+    <link rel='stylesheet' href='/stylesheets/sensor.css' />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=VAILY1W2bcfxvgT9FQ9TfauoB2Z1RKmI"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h2>传感器详情</h2>
+    </div>
+    <div class="container">
+        <div class="col-md-6 col-sm-12 sensor-detail">
+            <table class="table table-bordered table-responsive">
+                <thead>
+                    <h3>传感器ID: <%= aqiData._id %></h3>
+                </thead>
+                <tr>
+                    <td>
+                        <h5>传感器类型</h5>
+                    </td>
+                    <td>
+                        <h5>空气质量传感器</h5>
+                    </td>
+                    <td>
+                        <h5>监测时间</h5>
+                    </td>
+                    <td>
+                        <h5><%= aqiData.aqi.time_point %></h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>空气质量指数</h5>
+                    </td>
+                    <td>
+                        <h5><%= aqiData.aqi.aqi %></h5>
+                    </td>
+                    <td>
+                        <h5>空气质量等级</h5>
+                    </td>
+                    <td>
+                        <h5><%= aqiData.aqi.quality %></h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>PM2.5</h5>
+                    </td>
+                    <td>
+                        <h5><%= aqiData.aqi.pm2_5 %></h5>
+                    </td>
+                    <td>
+                        <h5>PM10</h5>
+                    </td>
+                    <td>
+                        <h5><%= aqiData.aqi.pm10 %></h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>NO2</h5>
+                    </td>
+                    <td>
+                        <h5><%= aqiData.aqi.no2 %></h5>
+                    </td>
+                    <td>
+                        <h5>SO2</h5>
+                    </td>
+                    <td>
+                        <h5><%= aqiData.aqi.so2 %></h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>O3</h5>
+                    </td>
+                    <td>
+                        <h5><%= aqiData.aqi.o3 %></h5>
+                    </td>
+                    <td>
+                        <h5>CO</h5>
+                    </td>
+                    <td>
+                        <h5><%= aqiData.aqi.co %></h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>首要污染物</h5>
+                    </td>
+                    <td>
+                        <h5><%= aqiData.aqi.primary_pollutant %></h5>
+                    </td>
+                    <td>
+                        <h5>出厂日期:</h5>
+                    </td>
+                    <td>
+                        <h5><%= aqiData.aqi.time_point %></h5>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-12 map">
+            <div id="allmap"></div>
+            <p>传感器位置是(116.367631,39.964291)</p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/javascripts/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/sensor.js"></script>
+</body>
+</html>

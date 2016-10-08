@@ -1,0 +1,62 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="Content-Type" charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/images/favicon.png">
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="bg"></div>
+    <div id="header">
+        <a href="/" id="title">智慧无线移动信息技术研究中心</a>
+        <a href="/xml" id="openapi" class="hidden-xs">开放api</a>
+        <a href="/angular" id="scholar" class="hidden-xs">angular</a>
+        <a href="#" id="iotsearch" class="hidden-xs">物联网搜索</a>
+    </div>
+    <div class="container">
+        <div class="row LOGO">
+            <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
+            <a href="/" title="">
+                <img id="LOGO" src="/images/logo_iswit.png" alt="WSN lab">
+                </a>
+            </div>
+        </div>
+        <div class="row userForm">
+            <div class="col-md-6 col-md-offset-3 col-xs-12 header-search">
+                <form method="GET" accept-charset="uf-8" id="search" action="/search/query">
+                    <!-- <div id="search"></div>  -->
+                    <div class="form-group select">
+                        <select class="form-control select" name="type">
+                            <option value="internet">互联网</option>
+                            <option value="social">社交网</option>
+                            <option value="wsn" selected="true">传感网</option>
+                        </select>
+                    </div>
+                    <input type="text" id="key" name="key" maxlength="40" placeholder="请输入查询语句，如实验室&amp;温度" required>
+                    <button type="submit" id="sub-button">搜索</button>
+                    <!-- </div> -->
+                </form>
+            </div>
+        </div>
+        
+    <!-- result -->
+    <div class="result" id="result">
+        
+    </div>
+
+        <div id="footer" class="col-md-6 col-md-offset-3 col-xs-12 footer">
+            <h5>Copyright&nbsp;&copy;&nbsp;2016 BUPT::ISWIT&nbsp;xuelangcxy&nbsp;|&nbsp;<a href="contactUs">&nbsp;联系我们</a></h5>
+        </div>
+    </div>
+    
+
+    <script type="text/javascript" src="/javascripts/jquery/jquery.js"></script>
+    <!-- <script type="text/javascript" src="/javascripts/jquery/jquery.form.js"></script> -->
+    <script type="text/javascript" src="/javascripts/search.js"></script>
+  </body>
+</html>

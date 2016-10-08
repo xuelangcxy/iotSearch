@@ -1,0 +1,56 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/images/favicon.png">
+  <title><%= title %></title>
+  <link rel="stylesheet" type="text/css" href="/assets/font-awesome-4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/bootstrap.min.css">
+  <link rel='stylesheet' href='/stylesheets/common.css' />
+  <link rel='stylesheet' href='/stylesheets/resultstyle.css' />
+  <link rel='stylesheet' href='/stylesheets/mapChart.css' />
+  <link rel='stylesheet' href='/stylesheets/side.css' />
+</head>
+<body style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;">
+<!-- preloader section -->
+    <div class="preloader">
+        <div class="sk-spinner sk-spinner-wordpress">
+            <span class="sk-inner-circle"></span>
+        </div>
+    </div>
+<div class="container">
+  <section id="search">
+        <label for="search-input"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search icons</span></label>
+        <input id="search-input" class="form-control input-lg" placeholder="请输入省份名称" autocomplete="off" spellcheck="false" autocorrect="off" tabindex="1">
+        <a id="search-clear" href="#" class="fa fa-times-circle hide" aria-hidden="true"><span class="sr-only">Clear search</span></a>
+        <div class="hint hide">
+          <!-- <ul class="hint_list">
+            <li>江西</li>
+            <li>江苏</li>
+            <li>浙江</li>
+            <li>黑龙江</li>
+          </ul> -->
+        </div>
+      </section>
+  <div class="mapChart" id="mapChart"></div>
+</div>
+
+<% include side.ejs %>
+
+  <% include footer.ejs %>
+
+
+<script type="text/javascript" src="/javascripts/jquery/jquery.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="/assets/echarts/echarts.js" charset="utf-8"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/echarts/3.2.3/echarts.js"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/echarts/3.2.3/echarts.min.js"></script> -->
+<script type="text/javascript" src="/javascripts/china.js" charset="utf-8"></script>
+<script type="text/javascript" src="/javascripts/customed.js" charset="utf-8"></script>
+<script type="text/javascript" src="/javascripts/mapChart.js" charset="utf-8"></script>
+<script type="text/javascript" src="/javascripts/preloader.js"></script>
+</body>
+</html>

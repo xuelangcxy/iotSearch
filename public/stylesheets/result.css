@@ -1,0 +1,43 @@
+*,p {
+	margin: 0px;
+	padding: 0px;
+}
+#bg {
+	background: url(../images/background/winter.jpg) no-repeat fixed center top transparent;
+	background-size: 100% 100%;
+	transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    -ms-transition: all .5s;
+}
+.realtime {
+	text-align: center;
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	/* background-color: #B4B596; */
+	background-color: rgba(255,255,255,0.5);
+	margin: 0 auto;
+	position: relative;
+	top: 100px;
+}
+.temperature {
+	font-size: 6em;
+	position: relative;
+	top: -8px;
+}
+.symbol {
+	font-size: 0.5em;
+	position: relative;
+	bottom: 25px;
+}
+.up img {
+	width: 55px;
+	position: relative;
+	top: 8px;
+}
+.down {
+	position: relative;
+	top: -25px;
+}

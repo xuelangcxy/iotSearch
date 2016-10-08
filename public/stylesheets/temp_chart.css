@@ -1,0 +1,65 @@
+.history_data {
+    /* margin-top: 35px; */
+    width: 100%;
+}
+.title2 {
+    font-size: 1.2em;
+}
+.divider {
+    /* width: 455px; */
+    width: 100%;
+    height: 1px;
+    background-color: #666;
+    margin-top: 5px;
+    opacity: 0.3;
+}
+.date1 {
+    font-size: 0.5em;
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    margin-left: 40px;
+}
+.divider1 {
+    width: 1px;
+    height: 25px;
+    background-color: #888;
+    opacity: 0.3;
+    display: inline-block;
+    margin-right: 5px;
+}
+.date2 {
+    font-size: 0.5em;
+    display: inline-block;
+    position: relative;
+    top: -5px;
+}
+.temp_chart {
+    height: 280px;
+    /* width: 570px; */
+    max-width: 100%;
+    margin-top: -30px;
+    /* margin-left: -50px; */
+    margin-bottom: -30px;
+}
+
+#divider {
+    margin-top: 25px;
+}
+.shiftBtn {
+    margin-top: 6px;
+}
+.shiftBtn>span {
+    /* margin-right: 35px; */
+    font-size: 1em;
+    float: left;
+    width: 14%;
+    cursor: pointer;
+}
+.shiftBtn>span.active {
+    color: #00b7ff;
+    font-size: 1.05em;
+}
+.subscript {
+    font-size: 0.1em;
+}
